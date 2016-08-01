@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://fiddle.jshell.net/_display/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+
+  
+  
+
+  
+  
+  
+
+  
+
+  <script type="text/javascript" src="./dummy.js"></script>
+
+  
+
+  
+
+  
+
+  
+    <link rel="stylesheet" type="text/css" href="./result-light.css">
+  
+
+  
+    
+      <script type="text/javascript" src="./Tone.min.js"></script>
+    
+  
+    
+      <script type="text/javascript" src="./jquery.min.js"></script>
+    
+  
+
+  <style type="text/css">
+    
+@media (max-width: 800px) {
+  #Grid li {
+    width: 31%;
+    padding-top: 31%;
+    margin-bottom: 3%; } }
+/* 2 COL */
+@media (max-width: 600px) {
+  #Grid li {
+    width: 48%;
+    padding-top: 48%;
+    margin-bottom: 4%; } }
+/* SINGLE COL */
+@media (max-width: 400px) {
+  #Grid li {
+    width: 100%;
+    padding-top: 100%;
+    margin-bottom: 5%; } }
+label {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  display: block;
+  font: 100 22px "Helvetica Neue";
+  border-left: 10px solid #922d8d; }
+
+label:last-of-type {
+  border-left: 10px dotted #922d8d; }
+
+.boxes {
+  background-color: #FFA0DB;
+  border: 2px;
+  border-radius: 10px;
+  margin: 1%;
+  width: 27%;
+  height: 40%;
+  position: relative;
+  display: inline-block;
+  float: left;
+  overflow: hidden; }
+
+.boxes:hover {
+  background-color: #FF4FD0; }
+
+p {
+  color: #1CA1C1; }
+
+#wrapper {
+  background: black;
+  left: 0px;
+  top: 0px;
+  position: absolute; }
+
+/*# sourceMappingURL=style.css.map */
+
+  </style>
+
+  <title>Piano Pads</title>
+
+  
+    
+
+
+
+
+<script type="text/javascript">//<![CDATA[
+window.onload=function(){
+var rows = 5;
+var colNum = 3;
+var totalNotes = 12;
+var musicScale = ["A","B","C","D","E","F","G"]
+var octave = 4;
+
+$(document).ready(function () {
+
+    var synth = new Tone.Synth({
+            "oscillator" : {
+                "type" : "square"
+            },
+            "envelope" : {
+                "attack" : 0.01,
+                "decay" : 0.2,
+                "sustain" : 0.2,
+                "release" : 0.2,
+            }
+        }).toMaster();
+
+
+
+
+/////////draw all the boxes with their notes///////////////
+ for (i = 0; i < totalNotes; i++) {
+
+        allBoxes(i);
+    }
+
+ ////////////////   
+
+
+function allBoxes(i) {
+    
+    // var radius = 100;
+    var imageObject = $("<div class='boxes'></div>")
+
+    imageObject.attr('id', 'layer' + i);
+
+    imageObject.mousedown(function (evt) {
+    console.log('clicked', imageObject)
+       console.log("\""+musicScale[i%musicScale.length]+octave+"\"")
+       synth.triggerAttack("\""+musicScale[i%musicScale.length]+"\"");
+    })
+
+    imageObject.mouseup(function (evt) {
+        console.log('up')
+         synth.triggerRelease();
+     })
+  
+    $('body').append(imageObject);
+}
+
+
+
+
+
+
+
+});
+
+
+
+
+
+
+}//]]> 
+
+</script>
+
+  
+</head>
+
+<body>
+    
+    <div id="wrapper"></div>
+  
+
+  
+  
+
+
+
+
+</body></html>
