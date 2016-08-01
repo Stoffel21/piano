@@ -1,14 +1,7 @@
 var rows = 5;
 var colNum = 3;
-var $row = $("<div />", {
-    class: 'row'
-});
-var $boxes = $("<div />", {
-    class: 'boxes'
-});
 var totalNotes = 12;
-var musicScale = ["A","B","C","D","E","F","G"
-]
+var musicScale = ["A","B","C","D","E","F","G"]
 var octave = 4;
 
 $(document).ready(function () {
@@ -28,14 +21,16 @@ $(document).ready(function () {
 
 
 
-////////////////////////
+/////////draw all the boxes with their notes///////////////
  for (i = 0; i < totalNotes; i++) {
 
-        makeImage(i);
+        allBoxes(i);
     }
 
+ ////////////////   
 
-function makeImage(i) {
+
+function allBoxes(i) {
     
     // var radius = 100;
     var imageObject = $("<div class='boxes'></div>")
