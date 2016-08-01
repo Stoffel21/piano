@@ -1,0 +1,25 @@
+.boxes {
+  background-color: #FFA0DB;
+  border: 2px;
+  border-radius: 10px;
+  margin: 1%;
+  width: 27%;
+  height: 40%;
+  position: relative;
+  display: inline-block;
+  float: left;
+  overflow: hidden; }
+
+.boxes:hover {
+  background-color: #FF4FD0; }
+
+p {
+  color: #1CA1C1; }
+
+#wrapper {
+  background: black;
+  left: 0px;
+  top: 0px;
+  position: absolute; }
+
+/*# sourceMappingURL=style.css.map */
