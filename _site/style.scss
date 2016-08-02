@@ -1,0 +1,217 @@
+// ==== COLORS ==== //
+$text-color: #5A3AE0;
+$base-color: #FFA0DB;
+$hover-color: #FF4FD0;
+$playing-color: #C40EB6;
+$theme-color: #1CA1C1;
+$secondary-color: #C10E96;
+$ternary-color: $secondary-color;
+$link-color: #E0A966;
+$menu-item-color: white;
+$rounded: 10px;
+$canvaswidth: 800px;
+
+// ==== FONTS ==== for css to read //
+$text-font: "Roboto Slab";
+$headline-font: "Roboto Slab";
+
+// ==== SIZES ==== //
+
+
+div, ul, li{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* -- FLUID GRID STYLES -- */
+
+#Grid{
+  margin-bottom: 40px;
+  text-align: justify;
+  font-size: 0.1px;
+}
+
+#Grid li{
+  display: inline-block;
+  background: #eee;
+  width: 23%;
+  padding-top: 23%; /* Used instead of height to give elements fluid, width-based height */
+  margin-bottom: 2.5%;
+}
+
+#Grid:after{
+  content: '';
+  display: inline-block;
+  width: 100%;
+  border-top: 10px dashed #922d8d; /* Border added to make element visible for demonstration purposes */
+}
+
+#Grid .placeholder{
+  padding: 0;
+  border-top: 10px solid #922d8d; /* Border added to make element visible for demonstration purposes */
+}
+
+/* -- MEDIA QUERIES DEFINING RESPONSIVE LAYOUTS -- */
+
+/* 3 COL */
+
+@media (max-width: 800px){
+  #Grid li{
+    width: 31%;
+    padding-top: 31%;
+    margin-bottom: 3%;
+  }
+}
+
+/* 2 COL */
+
+@media (max-width: 600px){
+  #Grid li{
+    width: 48%;
+    padding-top: 48%;
+    margin-bottom: 4%;
+  }
+}
+
+/* SINGLE COL */
+
+@media (max-width: 400px){
+  #Grid li{
+    width: 100%;
+    padding-top: 100%;
+    margin-bottom: 5%;
+  }
+}
+
+
+
+label{
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  display: block;
+  font: 100 22px "Helvetica Neue"; 
+  border-left: 10px solid #922d8d;
+}
+
+label:last-of-type{
+  border-left: 10px dotted #922d8d;
+}
+
+
+
+
+////the rest is from me
+
+
+
+
+
+.boxes{
+	background-color: $base-color;
+	border: 2px;
+	border-radius: $rounded;
+	margin: 1%;
+	width: 27%;
+	height: 40%;
+	position: relative;
+	display: inline-block;
+	float: left;
+	    overflow:hidden;
+}
+
+.boxes:hover{
+	background-color: $hover-color;
+}
+
+p {
+	color:$theme-color;
+
+  
+}
+
+#wrapper {
+    // width: $canvaswidth;
+    // height: 1920px;
+    // margin-top: 100px;
+    // margin-left: auto;
+    // margin-right: auto;
+    background: black;
+    left:0px;
+    top:0px;
+    position: absolute;
+}
+.row {
+    // width: auto;
+    // height: 100px;
+    // background: #313131;
+}
+
+// a {
+// 	color: $link-color;
+// 	&:hover{
+// 		color: darken($link-color, 25%);
+// 	}
+
+// }
+
+// @include apply-to-ie-6 {
+// 	body{
+// 		font:{
+// 			size: 125%;
+// 		}
+// 	}
+// }
+
+// .warning-button{
+// 	@include warning;
+// 	padding: 8px 12px;
+// 	@include box();
+
+// }
+
+// #header {
+// 	height: $header-height;
+// 	background-color: $theme-color;
+// 	@include box(8px, 1px solid #999);
+// 	@include box-shadow(2px 0px 4px $theme-color, 1px 1px 6px $secondary-color);
+
+  // #main-menu {
+
+  // 	li{
+  // 		display: inline;
+  // 	}
+
+  // 	a{
+  // 		color:$menu-item-color;
+  // 		border-bottom: 1px solid transparentize(#fefefe, 1);
+  // 		padding: 6px 8px;
+  // 	}
+
+  // }
+  
+//   #logo {
+
+//   }
+// }
+
+// #main {
+// 	width: $content-width;
+// 	@media only screen and (max-width: 960px){
+// 		width: auto;
+// 		max-width: $content-width;
+// 	}
+// 	margin-right: auto;
+// 	margin-left: auto;
+
+//   #content {
+//   }
+
+//   #sidebar {
+//   }
+// }
+
+// #footer {
+// 	height: $footer-height;
+
+// }
