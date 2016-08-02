@@ -1,9 +1,10 @@
 var rows = 5;
 var colNum = 3;
-var totalNotes = 12;
-var musicScale = ["A", "B", "C", "D", "E", "F", "G"]
-var notes = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'];
+var windowHeight = $(window).height();
+// var musicScale = ["A", "B", "C", "D", "E", "F", "G"]
+var musicScale = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'];
 var octave = 2;
+var totalNotes = musicScale.length;
 
 $(document).ready(function() {
 
@@ -63,14 +64,14 @@ $(document).ready(function() {
         imageObject.attr('id', 'layer' + i);
 
         imageObject.mousedown(function(evt) {
-            console.log('clicked', imageObject)
-            // console.log("\"" + musicScale[i] + $('#octave-selected').val() + "\"")
+            // console.log('clicked', imageObject)
+            console.log("\"" + musicScale[i] + $('#octave-selected').val() + "\"")
                 // console.log("\""+musicScale[i]+(octave+1)+"\"")
-            if (i <= 6) {
+            if (i <= musicScale.length) {
 
-                synth.triggerAttack("\"" + musicScale[i] + ($('#octave-selected').val()) + "\"");
+                synth.triggerAttack(musicScale[i] + ($('#octave-selected').val()));
             } else {
-                synth.triggerAttack("\"" + musicScale[i] + (($('#octave-selected').val()) + 1) + "\"");
+                synth.triggerAttack(musicScale[i] + (($('#octave-selected').val()) + 1));
             }
         })
 

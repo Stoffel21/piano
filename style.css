@@ -64,7 +64,7 @@ label:last-of-type {
   border-radius: 10px;
   margin: 1%;
   width: 27%;
-  height: 40%;
+  height: 21%;
   position: relative;
   display: inline-block;
   float: left;
@@ -75,6 +75,9 @@ label:last-of-type {
 
 p {
   color: #1CA1C1; }
+
+#header {
+  width: 100%; }
 
 #wrapper {
   background: black;
